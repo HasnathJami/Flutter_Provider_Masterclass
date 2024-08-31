@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_provider_masterclass/favorite/favorite_screen.dart';
 import 'package:flutter_provider_masterclass/provider/counter_provider.dart';
+import 'package:flutter_provider_masterclass/provider/favorite_provider.dart';
 import 'package:flutter_provider_masterclass/provider/slider_provider.dart';
-import 'package:flutter_provider_masterclass/screen/slider_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -24,11 +25,12 @@ class myApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => CounterProvider()),
-        ChangeNotifierProvider(create: (_) => SliderProvider())
+        ChangeNotifierProvider(create: (_) => SliderProvider()),
+        ChangeNotifierProvider(create: (_) => FavoriteProvider())
       ],
       child: MaterialApp(
         title: "Provider Masterclass",
-        home: SliderScreen(),
+        home: FavoriteScreen(),
       ),
     );
   }
